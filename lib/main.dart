@@ -14,13 +14,16 @@ class MyApp extends StatelessWidget {
       title: 'Personal Expenses',
       theme: ThemeData(
           primarySwatch: Colors.purple,
-          accentColor: Colors.amber,
+          colorScheme: ColorScheme.fromSwatch().copyWith(
+            secondary: Colors.amber, // Your accent color
+          ),
           fontFamily: 'Quicksand',
-          textTheme: ThemeData.light().textTheme.copyWith(
-              headline6: TextStyle(fontFamily: 'OpenSans', fontSize: 18)),
+          toolbarTextStyle: ThemeData.light().textTheme.copyWith(
+              titleLarge: TextStyle(fontFamily: 'OpenSans', fontSize: 18)),
           appBarTheme: AppBarTheme(
-              textTheme: ThemeData.light().textTheme.copyWith(
-                  headline6: TextStyle(fontFamily: 'OpenSans', fontSize: 20)))),
+              titleTextStyle: ThemeData.light().textTheme.copyWith(
+                  titleLarge:
+                      TextStyle(fontFamily: 'OpenSans', fontSize: 20)))),
       home: MyHomePage(),
     );
   }
